@@ -1,10 +1,10 @@
 import React from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { RouterPages } from '../App/Router';
-import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+
   return (
     <>
       <HashRouter>
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };

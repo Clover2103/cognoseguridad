@@ -1,0 +1,135 @@
+:root {
+  --cogno-blue-dark: #212c60;
+  --cogno-blue-lite: #7981be;
+  --cogno-yellow: #efb325;
+  --cogno-white: #FFFFFF;
+  --cogno-dark: #000000;
+}
+
+.bodyHomeAboutUs {
+  min-height: 60vh;
+  width: 100%;
+  background-color: var(--cogno-blue-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentHomeAboutUs {
+  justify-content: center;
+  align-items: center;
+}
+
+.leftHomeAboutUsInfo {
+  width: 280px;
+  height: 280px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--cogno-white);
+  border-radius: 50%;
+  padding: 8px;
+  z-index: 100;
+  font-size: 0.7rem;
+}
+
+.leftHomeAboutUsInfo button {
+  width: 150px;
+  background-color: var(--cogno-yellow);
+  border-radius: 16px;
+  padding: 4px;
+  font-weight: bold;
+  border: none;
+  box-shadow: 4px 4px 10px var(--cogno-yellow);
+}
+
+.rigthHomeAboutUs img{
+  width: 400px;
+}
+
+.rigthHomeAboutUs,
+.leftHomeAboutUs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.leftHomeAboutUs {
+  position: relative;
+}
+
+.circleLeftHomeAboutUs1 {
+  width: 300px;
+  height: 300px;
+  background-color: var(--cogno-blue-lite);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 20;
+  top: -15%;
+  left: 15%;
+  opacity: 0.5;
+}
+
+.circleLeftHomeAboutUs2 {
+  width: 300px;
+  height: 300px;
+  background-color: var(--cogno-blue-lite);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 20;
+  top: 8%;
+  left: 15%;
+  opacity: 0.5;
+}
+
+.circleLeftHomeAboutUs3 {
+  width: 300px;
+  height: 300px;
+  background-color: var(--cogno-blue-lite);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 20;
+  top: -10%;
+  right: 5%;
+  opacity: 0.5;
+}
+
+.circleLeftHomeAboutUs4 {
+  width: 300px;
+  height: 300px;
+  background-color: var(--cogno-blue-lite);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 20;
+  top: 10%;
+  right: 10%;
+  opacity: 0.5;
+}
+
+.circleLeftHomeAboutUs5 {
+  width: 300px;
+  height: 350px;
+  background-color: var(--cogno-blue-lite);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 20;
+  top: -20%;
+  right: 15%;
+  opacity: 0.5;
+}
+
+.circleLeftHomeAboutUs6 {
+  width: 300px;
+  height: 300px;
+  background-color: var(--cogno-blue-lite);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 20;
+  bottom: -20%;
+  right: 20%;
+  opacity: 0.5;
+}
