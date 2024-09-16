@@ -1,0 +1,119 @@
+:root {
+  --cogno-blue-dark: #212c60;
+  --cogno-blue-lite: #7981be;
+  --cogno-yellow: #efb325;
+  --cogno-white: #FFFFFF;
+  --cogno-dark: #000000;
+}
+
+.bodyCoursesCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.direction1 {
+  display: flex;
+  width: 100%;
+}
+
+.direction2 {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+.direction1 img,
+.direction2 img {
+  width: 300px;
+  border-radius: 50%;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  text-align: justify;
+  padding: 20px;
+}
+
+.card-content h3{
+  color: var(--cogno-blue-dark);
+}
+
+.card-content p {
+  font-size: 18px;
+}
+
+.direction1card-image,
+.direction2card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.direction1card-image::before{
+  position: absolute;
+  height: 310px;
+  width: 310px;
+  background-image: conic-gradient( var(--cogno-blue-dark) 200deg, transparent 500deg);
+  content: '';
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate1 3s linear infinite;
+}
+
+.direction2card-image::before{
+  position: absolute;
+  height: 310px;
+  width: 310px;
+  background-image: conic-gradient( var(--cogno-blue-dark) 200deg, transparent 500deg);
+  content: '';
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate2 3s linear infinite;
+}
+
+.card-button {
+  width: 100%;
+  text-align: start;
+  color: #212c60;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px
+}
+
+@media screen and (max-width: 767px) {
+
+  .direction2 {
+    flex-direction: row;
+  }
+
+}
+
+@keyframes rotate1 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
