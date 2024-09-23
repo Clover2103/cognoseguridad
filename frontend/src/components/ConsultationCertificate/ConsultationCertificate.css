@@ -1,0 +1,16 @@
+:root {
+  --cogno-blue-dark: #212c60;
+  --cogno-blue-lite: #7981be;
+  --cogno-yellow: #efb325;
+  --cogno-white: #FFFFFF;
+  --cogno-dark: #000000;
+}
+
+.certificate-body {
+  min-height: 80vh;
+}
+
+.btn-primary {
+  background-color: var(--cogno-blue-lite);
+  border-color: var(--cogno-blue-lite);
+}

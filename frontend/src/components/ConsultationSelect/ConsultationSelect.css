@@ -1,0 +1,18 @@
+:root {
+  --cogno-blue-dark: #212c60;
+  --cogno-blue-lite: #7981be;
+  --cogno-yellow: #efb325;
+  --cogno-white: #FFFFFF;
+  --cogno-dark: #000000;
+}
+
+.bodyConsultationSelect {
+  margin-top: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.consultation-cont {
+  width: 380px;
+}

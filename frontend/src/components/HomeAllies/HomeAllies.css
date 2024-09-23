@@ -1,0 +1,189 @@
+:root {
+  --cogno-blue-dark: #212c60;
+  --cogno-blue-lite: #7981be;
+  --cogno-yellow: #efb325;
+  --cogno-white: #FFFFFF;
+  --cogno-dark: #000000;
+}
+
+.bodyHomeAllies {
+  width: 100%;
+  height: 500px;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 8px;
+  overflow: hidden; /* Asegura que no se salga del contenedor */
+}
+
+.carrucelAllies {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* Mantener los elementos dentro del carrusel */
+  z-index: 100; /* Apilar encima de carrucel-deg */
+}
+
+.carrucel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrucelImg {
+  transition: all 0.5s ease;
+  display: none;
+  border-radius: 25px;
+  position: absolute; /* Para controlar mejor la superposición */
+}
+
+.carrucelImg img {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.carrucel-deg {
+  position: absolute;
+  background-color: #ffffff9c;
+  z-index: 50; /* Ajustado para estar detrás de las imágenes laterales */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carrucelImg.focus {
+  width: 350px;
+  height: 350px;
+  z-index: 150; /* Por encima de todo */
+  opacity: 1;
+  display: block;
+  position: absolute;
+  box-shadow: 4px 5px 20px var(--aiex-yellow);
+  border-radius: 50%;
+}
+
+.carrucelImg.left,
+.carrucelImg.right {
+  width: 280px;
+  height: 280px;
+  z-index: 100; /* Justo por debajo del focus pero sobre el carrucel-deg */
+  opacity: 1;
+  display: block;
+  border-radius: 50%;
+}
+
+.carrucelImg.left {
+  left: 0;
+}
+
+.carrucelImg.right {
+  right: 0;
+}
+
+.nav-btn {
+  position: absolute;
+  font-size: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: var(--aiex-dark);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 150;
+}
+
+.prev-btn {
+  left: 24px;
+}
+
+.next-btn {
+  right: 24px;
+}
+
+.carrucelImg figure {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrucelImg figure img {
+    transition: all 500ms ease-out;
+    width: 75%;
+    height: 75%;
+}
+
+.alliesInfo {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cogno-dark);
+}
+
+.carrucelImg figure .alliesInfo {
+    position: absolute;
+    margin: 0;
+    width: 300px;
+    height: 300px;
+    background-color: var(--cogno-dark); 
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrucelImg figure:hover > .alliesInfo{
+  opacity: 1;
+  visibility: visible;
+}
+
+.carrucelImg figure .alliesInfo p {
+    color: var(--cogno-white);
+    font-weight: bold;
+    margin-bottom: 120px;
+    transition: all 500ms ease-out;
+    font-size: 12px;
+    width: 80%;
+}
+
+.carrucelImg figure:hover > .alliesInfo p {
+    margin-bottom: 15px;
+}
+
+.btn-allies {
+  background-color: var(--cogno-dark);
+  border-radius: 12px;
+  color: var(--aiex-white);
+  font-weight: bold;
+  font-size: 15px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: 2px solid var(--cogno-white);
+}
