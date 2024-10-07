@@ -8,11 +8,27 @@ import { Contact } from "../pages/contact";
 import { NavBar } from '../components/NavBar';
 import { NavBarResponsive } from '../components/NavBarResponsive';
 import { Footer } from '../components/Footer';
+import { Modal } from '../components/Modal';
+import { RedesFlotantes } from '../components/Redes';
+import { ScrollToTop } from '../components/ScrollToTop';
 
 const RouterPages = () => {
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+
   const [isMobile, setIsMobile] = useState(window.innerWidth < 790);
   const location = useLocation();
+
+  const showModal = (content) => {
+    setModalContent(content);
+    setIsModalVisible(true);
+  };
+
+  const hideModal = () => {
+    setIsModalVisible(false);
+    setModalContent(null);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,20 +41,22 @@ const RouterPages = () => {
 
   return (
     <div>
+      <ScrollToTop />
       {location.pathname !== "/" && (
         isMobile ? 
           <NavBarResponsive /> : 
           <NavBar />
       )}
+      {location.pathname !== "/" && <RedesFlotantes />}
       <Routes>
         <Route path="/" element={<Preview />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/curses" element={<Courses />} />
+        <Route path="/home" element={<Home showModal={showModal}/>} />
+        <Route path="/curses" element={<Courses showModal={showModal}/>} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       {location.pathname !== "/" && <Footer />}
-
+      <Modal isVisible={isModalVisible} hideModal={hideModal} content={modalContent} />
     </div>
     
   );

@@ -11,6 +11,10 @@
   min-height: 100vh;
 }
 
+.bodyConsultationPolygon iframe{
+  min-height: 100vh;
+}
+
 .secc_prin {
   min-height: 250px;
   max-width: 600px;

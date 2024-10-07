@@ -1,0 +1,31 @@
+:root {
+  --cogno-blue-dark: #212c60;
+  --cogno-blue-lite: #7981be;
+  --cogno-yellow: #efb325;
+  --cogno-white: #FFFFFF;
+  --cogno-dark: #000000;
+}
+
+.bodyHomeBigCalendar {
+  width: 100%;
+}
+
+.rbc-header {
+  background-color: var(--cogno-blue-dark);
+}
+
+.rbc-header span {
+  color: var(--cogno-white);
+}
+
+.rbc-toolbar-label {
+  color: var(--cogno-blue-dark)
+}
+
+.rbc-label {
+  color: var(--cogno-white);
+}
+
+.rbc-time-gutter{
+  background-color: var(--cogno-blue-dark);
+}

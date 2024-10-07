@@ -1,10 +1,10 @@
 import React from "react";
 import { CoursesCourses } from "../../components/CoursesCourses";
 
-const Courses = () => {
+const Courses = ({ showModal }) => {
   return (
     <div>
-      <CoursesCourses />
+      <CoursesCourses showModal={showModal}/>
     </div>
   );
 };

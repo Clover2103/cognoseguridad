@@ -13,7 +13,7 @@ import "./HomeAllies.css";
 const alliesData = [
   { src: aiexsst, alt: "aiex sst", url: "https://aiex.co/", desc: "Contamos con la licencia para la prestacion de los servicios de seguridad y salud en el trabajo, concedida por el Ministerio de Salud y ..." },
   { src: clubtiro, alt: "clubtiro", url: "https://clubdetiroconasegur.com/", desc: "Fomenta el respeto, la sana convivencia, el juego limpio y el espíritu de competencia para el personal de Seguridad Privada..." },
-  { src: aiexocp, alt: "aiexocp", url: "https://cognoseguridad.com/", desc: "Somos una academia de capacitación con mas de 22 años de experiencia, que tiene por objetivo social proveer enseñanza, capacitación, entrenamiento y actualización..." },
+  { src: aiexocp, alt: "aiexocp", url: "https://aiex.com.co/", desc: "CERTIFICACIÓN DE PERSONAS AIEX S.A.S. es un Organismo de Evaluación de la Conformidad acreditado bajo la Norma ISO/IEC 17024:2012 de naturaleza privada y alto sentido de responsabilidad ..." },
   { src: conasegur, alt: "conasegur", url: "https://conasegur.org/", desc: "Somos la Corporación Nacional de Empresas de Seguridad Privada 'CONASEGUR', gremio del sector de la Vigilancia y Seguridad Privada, con cubrimiento a nivel Nacional..." },
   { src: funhumac, alt: "funhumac", url: "https://funhumac.org/", desc: "La Fundación Humana - Mujer Activa, es una organización que fomenta, fortalece y facilita el mejoramiento de la calidad de vida de las personas,..." },
   { src: vialseguridad, alt: "vialseguridad", url: "https://vialseguridad.com/", desc: "Somos una empresa de Seguridad Privada que cuenta con autorización SuperVigilancia Res. 20224100050807 de  05-08-2022, con un alto..." },
@@ -47,7 +47,7 @@ const HomeAllies = () => {
             <img src={data.src} alt={data.alt} />
             <div className="alliesInfo">
               <p>{data.desc}</p>
-              <a href={data.url}>
+              <a href={data.url} target="_blank" rel="noreferrer">
                 <button className="btn-allies">CONOCER MÁS</button>
               </a>
             </div>

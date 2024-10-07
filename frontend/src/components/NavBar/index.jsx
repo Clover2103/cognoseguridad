@@ -24,9 +24,11 @@ const NavBar = () => {
       </div>
 
       <div className="btnForm">
-        <button >
-          INGRESAR
-        </button>
+        <a href="https://e.learning.cognoseguridad.com/" target="_blank" rel="noreferrer">
+          <button >
+            INGRESAR
+          </button>
+        </a>
       </div>
     </div>
   );

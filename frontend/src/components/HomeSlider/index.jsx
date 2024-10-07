@@ -1,20 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import imagen from "../../assets/home/slider/imagenSlider.png";
+import back from "../../assets/contact/back.jpeg";
 import './HomeSlider.css';
 
 const HomeSlider = () => {
   return (
     <div className="bodyHomeSlider">
+      <div className="img-back-HomeSlider">
+        <img src={back} alt="back" />
+      </div>
       <div className="containerHomeSlider row g-2 mb-4">
         <div className="leftHomeSlider col-md">
-          <img src={imagen} alt="Slider" />
+          {/* <img src={imagen} alt="Slider" /> */}
         </div>
         <div className="rightHomeSlider col-md">
           <div className="descriptionHomeSlider">
             <h3>¡BIENVENIDOS!</h3>
             <p>"A veces tienes que pensar en algo más que en tu propia seguridad, a veces tienes que pensar en el bien mayor"</p>
             <p>Joanne Kathelen Rowling</p>
-            <button>CONOCE NUESTROS CURSOS</button>
+            <Link to="/curses">
+              <button>
+                CONOCE NUESTROS CURSOS
+              </button>
+            </Link>
           </div>
         </div>
       </div>

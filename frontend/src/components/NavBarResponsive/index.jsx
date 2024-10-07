@@ -34,9 +34,11 @@ const NavBarResponsive = () => {
           <Link to="/consultation" onClick={toggleMenu}>CONSULTAS</Link>
           <Link to="/contact" onClick={toggleMenu}>CONTACTO</Link>
           <div className="btnFormRes">
-            <button >
-              INGRESAR
-            </button>
+            <a href="https://e.learning.cognoseguridad.com/" target="_blank" rel="noreferrer">
+              <button >
+                INGRESAR
+              </button>
+            </a>
           </div>
         </div>
       )}
