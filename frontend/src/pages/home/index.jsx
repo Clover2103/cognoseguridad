@@ -12,25 +12,38 @@ import image3 from '../../assets/home/modalHome/imagen3.png';
 import image4 from '../../assets/home/modalHome/imagen4.png';
 import image5 from '../../assets/home/modalHome/imagen5.png';
 import image6 from '../../assets/home/modalHome/imagen6.png';
+import image7 from '../../assets/home/modalHome/imagen7.jpg';
 
-const images = [image1, image2, image3, image4, image5, image6]; // Array de imágenes
+const imagesWithLinks = [
+  { src: image7, link: "https://forms.gle/XjDmsstiJZJAAuwW6" },
+  { src: image7, link: "https://forms.gle/XjDmsstiJZJAAuwW6" },
+  { src: image7, link: "https://forms.gle/XjDmsstiJZJAAuwW6" },
+  { src: image7, link: "https://forms.gle/XjDmsstiJZJAAuwW6" },
+  { src: image7, link: "https://forms.gle/XjDmsstiJZJAAuwW6" },
+  { src: image7, link: "https://forms.gle/XjDmsstiJZJAAuwW6" },
+];
 
-const Home =  ({ showModal }) => {
-
+const Home = ({ showModal }) => {
   useEffect(() => {
     const imageShown = sessionStorage.getItem('imageShown');
 
     if (!imageShown) {
-      const randomImage = images[Math.floor(Math.random() * images.length)];
+      const randomImage = imagesWithLinks[Math.floor(Math.random() * imagesWithLinks.length)];
       sessionStorage.setItem('imageShown', 'true'); // Marcar que ya se ha mostrado
-      showModal(<img src={randomImage} style={{ width: '100%', height: '100%' }} alt="Imagen aleatoria" />);
+      
+      showModal(
+        <a href={randomImage.link} target="_blank" rel="noopener noreferrer">
+          <img src={randomImage.src} style={{ width: '100%' }} alt="Imagen aleatoria" />
+          <button className="w-100 btn btn-danger text-white ">CONOCER MAS</button>
+        </a>
+      );
     }
   }, [showModal]);
 
   return (
     <div>
       <HomeSlider />
-      <HomeAboutUs showModal={showModal}/>
+      <HomeAboutUs showModal={showModal} />
       <HomeMAndV />
       <HomeAwards />
       <HomeBigCalendar />
