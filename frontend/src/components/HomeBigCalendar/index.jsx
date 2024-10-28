@@ -39,7 +39,7 @@ const HomeBigCalendar = () => {
     const socioHumanisticaEvents = generateEventsForDay(
       'SociHumanística',
       2,
-      10,
+      8,
       12,
       '2024-09-01',
       '2028-12-31'
@@ -48,8 +48,8 @@ const HomeBigCalendar = () => {
     const procedimientosOperativosEvents = generateEventsForDay(
       'Procedimientos Operativos',
       3,
-      11,
-      13,
+      8,
+      12,
       '2024-09-01',
       '2028-12-31'
     );
@@ -57,8 +57,8 @@ const HomeBigCalendar = () => {
     const areaLegalEvents = generateEventsForDay(
       'Área Legal',
       4,
-      14,
-      16,
+      8,
+      12,
       '2024-09-01',
       '2028-12-31'
     );
