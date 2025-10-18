@@ -24,11 +24,6 @@ const Footer = () => {
 
         <div className="redes">
           <div>
-            <a href="" target="_blank">
-              <FaTiktok className="red-icon"/>
-            </a>
-          </div>
-          <div>
             <a href="https://www.facebook.com/CognoseguridadBogota/?mibextid=LQQJ4d&_rdr" target="_blank" className="cl-p" >
               <FaFacebook className="red-icon"/>
             </a>
@@ -39,7 +34,7 @@ const Footer = () => {
             </a>
           </div>
           <div>
-            <a href="https://wa.link/a2j3c0" target="_blank" className="cl-p">
+            <a href="https://api.whatsapp.com/send?phone=573105610135" target="_blank" className="cl-p">
               <FaWhatsapp className="red-icon"/>
             </a>
           </div>
@@ -68,7 +63,7 @@ const Footer = () => {
 
       <div className="cont-area col-md-4">
         <div className="cont-links">
-          <p><Link to="/home#aboutUs">¿Quienes somos?</Link></p>
+          <p><Link to="/#aboutUs">¿Quienes somos?</Link></p>
           <p><Link to="/curses">Nuestros cursos</Link></p>
           <p><Link to="/contact">Contactenos</Link></p>
           <p><Link to="/contact">Quejas / Apelaciones</Link></p>

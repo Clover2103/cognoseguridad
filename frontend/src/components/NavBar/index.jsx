@@ -10,14 +10,14 @@ const NavBar = () => {
     <div className="navBar">
       <div className="navBarIzq gap-2">
         <div className="navBar__logo cogno-logo-navbar">
-          <Link to="/home" style={{ textDecoration: 'none' }}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <img src={logo} alt="cognoseguridad" />
           </Link>
         </div>
       </div>
       
       <div className="navBar__links gap-3">
-        <Link to="/home">INICIO</Link>
+        <Link to="/">INICIO</Link>
         <Link to="/curses">CURSOS</Link>
         <Link to="/consultation">CONSULTAS</Link>
         <Link to="/contact">CONTACTO</Link>

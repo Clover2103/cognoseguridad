@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { Preview } from "../pages/preview";
 import { Home } from "../pages/home";
 import { Courses } from "../pages/courses";
 import { Consultation } from "../pages/consultation";
@@ -42,20 +41,17 @@ const RouterPages = () => {
   return (
     <div>
       <ScrollToTop />
-      {location.pathname !== "/" && (
-        isMobile ? 
-          <NavBarResponsive /> : 
-          <NavBar />
-      )}
+      {/* {location.pathname !== "/" && ( */}
+        {isMobile ? <NavBarResponsive /> : <NavBar />}
+      {/* )} */}
       {location.pathname !== "/" && <RedesFlotantes />}
       <Routes>
-        <Route path="/" element={<Preview />} />
-        <Route path="/home" element={<Home showModal={showModal}/>} />
+        <Route path="/" element={<Home showModal={showModal}/>} />
         <Route path="/curses" element={<Courses showModal={showModal}/>} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      {location.pathname !== "/" && <Footer />}
+      <Footer />
       <Modal isVisible={isModalVisible} hideModal={hideModal} content={modalContent} />
     </div>
     
