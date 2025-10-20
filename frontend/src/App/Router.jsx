@@ -41,10 +41,8 @@ const RouterPages = () => {
   return (
     <div>
       <ScrollToTop />
-      {/* {location.pathname !== "/" && ( */}
-        {isMobile ? <NavBarResponsive /> : <NavBar />}
-      {/* )} */}
-      {location.pathname !== "/" && <RedesFlotantes />}
+      {isMobile ? <NavBarResponsive /> : <NavBar />}
+      <RedesFlotantes />
       <Routes>
         <Route path="/" element={<Home showModal={showModal}/>} />
         <Route path="/curses" element={<Courses showModal={showModal}/>} />
