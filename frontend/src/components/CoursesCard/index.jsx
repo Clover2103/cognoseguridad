@@ -9,7 +9,7 @@ const CoursesCard = ({ src, title, description, direction, ciclos, showModal }) 
     // Generar el acordeón dinámicamente para los ciclos
     const content = (
       <div className="content-accordion">
-        <h1>{title}</h1>
+        <h1 className="modal-title-card">{title}</h1>
         <p>{description}</p>
         <div className="cont-accordion">
           <div className="accordion" id="accordionExample">

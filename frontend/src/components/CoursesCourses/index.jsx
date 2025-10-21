@@ -11,109 +11,129 @@ import image5 from '../../assets/courses/cordinador.png';
 const courses = [
   { 
     src: image1, 
-    title: 'Vigilante de seguridad', 
+    title: 'Fundamentación modulo basico enfasis vigilante',
     description: 'Capacitar a las personas que desean desempeñarse como vigilantes. Incluye formación en temas como derechos humanos, primeros auxilios, manejo de armas, normatividad, y técnicas de seguridad básica.', 
     direction: 'direction1',
     ciclos: {
       ciclo1: {
-        title: 'Fundamentación en Vigilancia',
-        description: 'La Fundamentación en Vigilancia es el primer paso para formar a quienes desean desempeñarse en el campo de la seguridad privada. Este ciclo, con una duración de 100 horas, brinda los conocimientos básicos en normativas, manejo de situaciones críticas y procedimientos de seguridad, preparando a los aspirantes para actuar con profesionalismo y responsabilidad. Con una sólida formación teórica y práctica, los futuros vigilantes estarán capacitados para proteger bienes, personas e instalaciones, siempre respetando los derechos humanos y actuando de acuerdo a la ley.'
+        title: 'Fundamentación modulo basico enfasis vigilante (120 horas)',
+        description: 'La Fundamentación es el ciclo inicial y obligatorio (120 Horas) que dota al aspirante de las competencias básicas en normatividad vigente, procedimientos de seguridad, primeros auxilios, control de situaciones, y manejo básico de armas para desempeñarse profesionalmente como vigilante.'
       },
       ciclo2: {
-        title: 'Reentrenamiento en Vigilancia',
-        description: 'El Reentrenamiento en Vigilancia está diseñado para reforzar y actualizar los conocimientos y habilidades de los vigilantes en ejercicio. Este ciclo de 30 horas es fundamental para garantizar que los profesionales del sector estén al día con las últimas normativas, tecnologías y estrategias en seguridad privada. A través de simulaciones y prácticas avanzadas, los vigilantes renuevan su capacidad de respuesta ante emergencias y su compromiso con la excelencia en el servicio de protección.'
+        title: 'Reentrenamiento basico (30 horas)',
+        description: 'Programa de actualización obligatoria (30 Horas) para vigilantes en servicio. Se enfoca en el refuerzo de procedimientos, la revisión de la normatividad legal más reciente y el perfeccionamiento de las técnicas operacionales y de manejo de armas.'
       },
       ciclo3: {
-        title: 'Especialización en Vigilancia',
-        description: 'La Especialización en Vigilancia es un ciclo avanzado de 60 horas que permite a los vigilantes profundizar en áreas específicas de la seguridad privada. Aquí, los profesionales adquieren competencias en el manejo de situaciones de alto riesgo, operaciones tácticas y gestión avanzada de seguridad. Esta especialización busca dotar a los vigilantes de herramientas especializadas que les permitan enfrentar retos complejos y elevar sus capacidades para desempeñar un rol estratégico dentro de las organizaciones.'
+        title: 'Reentrenamiento electivo (30 horas)',
+        description: 'Capacitación electiva de 30 horas enfocada en temas sectoriales según el servicio: Aeroportuario, Financiero, Comercial, Educativo, Eventos Públicos, Residencial, Petrolero, Turístico, Minero, Transporte Masivo, etc. Permite la especialización del servicio.'
       },
       ciclo4: {
-        title: 'Profundización en Vigilancia',
-        description: 'La Profundización en Vigilancia es un ciclo formativo de 30 horas, diseñado para aquellos vigilantes que buscan perfeccionar sus competencias y ampliar su conocimiento en seguridad privada. Este programa permite a los profesionales adentrarse en aspectos críticos de la vigilancia, como la evaluación de riesgos, la planificación de operaciones y el liderazgo en equipos de seguridad. Con esta formación, los vigilantes desarrollan una visión más integral y estratégica, listos para enfrentar desafíos más exigentes en su rol.'
+        title: 'Reentrenamiento electivo especialización en Vigilancia (80 horas)',
+        description: 'Ciclo avanzado de 80 horas para profundizar en áreas de alta complejidad y riesgo, según lo establecido por la SuperVigilancia (ej. Portuaria, Minera, Vigilancia de Establecimientos de Detección Preventiva y Carcelarios). Desarrolla competencias tácticas específicas.'
+      },
+      ciclo5: {
+        title: 'Profundización en Vigilancia (30 horas)',
+        description: 'Módulo de 30 horas que busca el perfeccionamiento de las habilidades adquiridas en la especialización, enfocándose en la evaluación de riesgos, planeación de operaciones y el liderazgo en equipos de seguridad en entornos exigentes.'
       }
     }
   },
   { 
     src: image2, 
-    title: 'Supervidor de seguridad', 
+    title: 'Fundamentación modulo basico enfasis supervisor',
     description: 'Formar a los vigilantes que deseen ascender a cargos de supervisión. Este curso enseña habilidades de liderazgo, coordinación de equipos de seguridad, y toma de decisiones en situaciones de riesgo.', 
     direction: 'direction2',
     ciclos: {
       ciclo1: {
-        title: 'Fundamentación en Supervisión de Vigilancia',
-        description: 'La Fundamentación en Supervisión de Vigilancia es el punto de partida para aquellos que buscan dirigir equipos de seguridad privada. Con una duración de 100 horas, este ciclo proporciona las bases necesarias para gestionar, coordinar y supervisar las operaciones de vigilancia, asegurando el cumplimiento de los protocolos y la normatividad vigente. Los supervisores formados en este ciclo estarán capacitados para liderar equipos, garantizar un entorno seguro y eficiente, y tomar decisiones clave en situaciones de riesgo.'
+        title: 'Fundamentación modulo basico enfasis supervisor (120 horas)',
+        description: 'Programa inicial de 120 horas para supervisores. Cubre la gestión operativa, la coordinación de puestos de vigilancia, el liderazgo de equipos, la toma de decisiones críticas y el aseguramiento del cumplimiento normativo en los servicios de seguridad privada.'
       },
       ciclo2: {
-        title: 'Reentrenamiento en Supervisión de Vigilancia',
-        description: 'El Reentrenamiento en Supervisión de Vigilancia, con una duración de 30 horas, está diseñado para actualizar y reforzar las habilidades de supervisores en ejercicio. Este ciclo se enfoca en las últimas normativas, técnicas de liderazgo y gestión de equipos de seguridad. A través de casos prácticos y simulaciones, los supervisores renuevan sus conocimientos y fortalecen su capacidad para supervisar operaciones, manejar conflictos y garantizar un control efectivo de las actividades de seguridad privada.'
+        title: 'Reentrenamiento basico (30 horas)',
+        description: 'Actualización obligatoria (30 Horas) para supervisores en ejercicio. Se centra en el refuerzo de las habilidades de liderazgo, las últimas normativas de seguridad privada, la gestión de conflictos y las técnicas de manejo de personal a cargo.'
       },
       ciclo3: {
-        title: 'Especialización en Supervisión de Vigilancia',
-        description: 'La Especialización en Supervisión de Vigilancia, con una duración de 60 horas, ofrece a los supervisores una formación avanzada en estrategias de control y manejo de equipos de seguridad en entornos de alto riesgo. Este ciclo se centra en el desarrollo de competencias clave como la planificación de operativos, la evaluación de amenazas y la toma de decisiones bajo presión. Los supervisores especializados estarán preparados para enfrentar desafíos complejos y garantizar el funcionamiento óptimo de las operaciones de seguridad.'
+        title: 'Reentrenamiento electivo (30 horas)',
+        description: 'Capacitación electiva de 30 horas enfocada en la supervisión de sectores específicos: Aeroportuario, Comercial, Educativo, Financiero, Eventos Públicos, Transporte Masivo, Portuario, Minero y demás unidades residenciales e industriales.'
       },
       ciclo4: {
-        title: 'Profundización en Supervisión de Vigilancia',
-        description: 'La Profundización en Supervisión de Vigilancia, con una duración de 30 horas, está enfocada en perfeccionar las habilidades de supervisión y gestión operativa. Este ciclo permite a los supervisores desarrollar una visión más estratégica y amplia de la seguridad privada, con énfasis en la gestión de recursos, la eficiencia operativa y el liderazgo de equipos multidisciplinarios. Los supervisores formados en este ciclo estarán equipados para implementar mejoras continuas y asegurar altos estándares de seguridad.'
+        title: 'Reentrenamiento electivo especialización en Supervisión de Vigilancia (80 horas)',
+        description: 'Ciclo de 80 horas que prepara al supervisor para el control de riesgos en escenarios complejos y específicos, tales como: Portuaria, Minera, Servicios Financieros, establecimientos de Detección Preventiva y Centros Carcelarios.'
+      },
+      ciclo5: {
+        title: 'Profundización en Supervisión de Vigilancia (30 horas)',
+        description: 'Módulo de 30 horas para el perfeccionamiento de competencias gerenciales y estratégicas en supervisión, incluyendo auditoría, control de gestión, y optimización de los recursos y procesos de seguridad.'
       }
     }
   },
   { 
     src: image3, 
-    title: 'Escolta de seguridad', 
-    description: 'Formación especializada para quienes deseen trabajar como escoltas de personas. El curso incluye entrenamiento en protección personal, técnicas de defensa, y conducción defensiva.', 
+    title: 'Fundamentación modulo basico enfasis escolta', 
+    description: 'Formación especializada para quienes deseen trabajar como escoltas de personas y mercancías de alto valor. El curso incluye entrenamiento en protección personal, técnicas de defensa y reacción, y conducción defensiva y evasiva.', 
     direction: 'direction1',
     ciclos: {
       ciclo1: {
-        title: 'Fundamentación en Escolta de Seguridad',
-        description: 'La Fundamentación en Escolta de Seguridad es el primer paso esencial para quienes buscan proteger de manera profesional a personas bajo situaciones de riesgo. Con una duración de 100 horas, este ciclo está orientado a formar escoltas capacitados en técnicas de protección personal, manejo de riesgos y procedimientos de seguridad avanzada. Los participantes desarrollan las habilidades necesarias para garantizar la seguridad de individuos en tránsito o en situaciones críticas, asegurando un entorno seguro y controlado en todo momento.'
+        title: 'Fundamentación modulo basico enfasis escolta (120 horas)',
+        description: 'Programa inicial de 120 horas. Forma al personal en la protección de individuos (esquemas de seguridad), reacción ante ataques, manejo defensivo y evasivo, y el uso y porte legal de armas en el servicio de escolta.'
       },
       ciclo2: {
-        title: 'Reentrenamiento en Escolta de Seguridad',
-        description: 'El Reentrenamiento en Escolta de Seguridad, con una duración de 30 horas, tiene como objetivo mantener actualizados a los escoltas en activo sobre las últimas técnicas de protección personal, el manejo de nuevas amenazas y el uso de herramientas modernas en seguridad. A través de simulaciones intensivas y situaciones de riesgo controlado, los escoltas refuerzan sus competencias para reaccionar de manera efectiva ante potenciales amenazas y garantizar la seguridad de sus protegidos en diferentes escenarios.'
+        title: 'Reentrenamiento basico (30 horas)',
+        description: 'Actualización obligatoria (30 Horas). Refuerza los protocolos de seguridad, las técnicas de defensa personal y la capacidad de respuesta inmediata y táctica ante situaciones de riesgo para el protegido o el bien escoltado.'
       },
       ciclo3: {
-        title: 'Especialización en Escolta de Seguridad',
-        description: 'La Especialización en Escolta de Seguridad, con una duración de 60 horas, proporciona formación avanzada para escoltas que buscan especializarse en la protección de individuos en entornos de alto riesgo. Este ciclo está diseñado para desarrollar habilidades tácticas, análisis de amenazas y estrategias de evasión y defensa personal. Los escoltas especializados podrán operar en situaciones de riesgo elevado, asegurando la protección de personas clave, con un enfoque en la prevención y mitigación de peligros.'
+        title: 'Reentrenamiento electivo (30 horas)',
+        description: 'Capacitación electiva de 30 horas enfocada en el manejo defensivo, protección en tránsito y el transporte de valores, incluyendo estrategias de protección en ruta y procedimientos logísticos de seguridad.'
       },
       ciclo4: {
-        title: 'Profundización en Escolta de Seguridad',
-        description: 'La Profundización en Escolta de Seguridad, con una duración de 30 horas, está orientada a escoltas experimentados que buscan perfeccionar sus técnicas y ampliar sus conocimientos en el manejo de situaciones críticas. Este ciclo se enfoca en la toma de decisiones bajo presión, la planificación de rutas seguras y la gestión de emergencias, ofreciendo una formación integral para garantizar la seguridad de sus protegidos en entornos complejos y cambiantes.'
+        title: 'Reentrenamiento electivo especialización en Escolta de Seguridad (80 horas)',
+        description: 'Ciclo de 80 horas que profundiza en: Protección a Dignatarios (planes de avanzada y protocolos especializados), Protección a Personas Amenazadas y Transporte de Valores. Proporciona herramientas tácticas avanzadas.'
+      },
+      ciclo5: {
+        title: 'Profundización en Escolta de Seguridad (30 horas)',
+        description: 'Módulo de 30 horas que perfecciona las técnicas tácticas y de análisis de riesgos en la protección, con énfasis en la planeación y ejecución de misiones de seguridad complejas y la toma de decisiones bajo presión.'
       }
     }
   },
   { 
     src: image4, 
-    title: 'Operador de medios tecnologicos', 
-    description: 'Formar a los participantes en la operación y monitoreo de dispositivos tecnológicos utilizados en la seguridad privada. El curso abarca la instalación, manejo y supervisión de herramientas tecnológicas como: 1) Circuito cerrado de televisión (CCTV). 2) Sistemas de alarmas. 3) Controles de acceso electrónico. 4) Equipos de detección de incendios. 5) Software de seguridad y análisis de video.', 
+    title: 'Fundamentación modulo basico enfasis OMT',
+    description: 'Formar a los participantes en la operación y monitoreo de dispositivos tecnológicos utilizados en la seguridad privada (CCTV, alarmas, controles de acceso). El curso abarca la operación, supervisión y respuesta a eventos.', 
     direction: 'direction2',
     ciclos: {
       ciclo1: {
-        title: 'Fundamentación en Medios Tecnológicos de Seguridad',
-        description: 'La Fundamentación en Medios Tecnológicos de Seguridad es el pilar inicial para aquellos interesados en la operación y manejo de tecnologías aplicadas a la seguridad. Con una duración de 100 horas, este ciclo proporciona los conocimientos necesarios sobre sistemas de videovigilancia, alarmas, control de accesos y otras tecnologías clave para la protección de instalaciones y personas. Los participantes aprenderán a operar de manera eficiente estos sistemas, comprendiendo tanto su funcionamiento técnico como su rol dentro de una estrategia integral de seguridad.'
+        title: 'Fundamentación modulo basico enfasis OMT (120 horas)',
+        description: 'Curso inicial de 120 horas que sienta las bases para la operación y gestión de sistemas de medios tecnológicos, incluyendo el uso básico de software de monitoreo, CCTV y sistemas de alarma. Otorga la competencia fundamental para un OMT.'
       },
       ciclo2: {
-        title: 'Reentrenamiento en Medios Tecnológicos de Seguridad',
-        description: 'El Reentrenamiento en Medios Tecnológicos de Seguridad, con una duración de 30 horas, está diseñado para mantener actualizados a los operadores de sistemas de seguridad tecnológica. Este ciclo se centra en las nuevas tecnologías emergentes, actualizaciones de software y mejores prácticas en la gestión de medios tecnológicos. Los participantes renovarán sus conocimientos en sistemas de monitoreo y alarmas, garantizando que las operaciones se mantengan a la vanguardia tecnológica y ofrezcan el mayor nivel de protección.'
+        title: 'Reentrenamiento basico (30 horas)',
+        description: 'Actualización obligatoria (30 Horas) para operadores. Revisa los protocolos de monitoreo, la reacción a alarmas y el manejo de nuevas plataformas tecnológicas de seguridad para mantener la eficiencia operativa.'
       },
       ciclo3: {
-        title: 'Especialización en Medios Tecnológicos de Seguridad',
-        description: 'La Especialización en Medios Tecnológicos de Seguridad, con una duración de 60 horas, se enfoca en el manejo avanzado y la integración de sistemas de seguridad tecnológica complejos. Este ciclo capacita a los participantes en el análisis de datos de videovigilancia, la gestión de redes de seguridad y la configuración avanzada de sistemas de control de acceso y alarmas. La especialización permite a los profesionales implementar soluciones tecnológicas más robustas y estratégicas, capaces de enfrentar riesgos crecientes y proteger de manera integral infraestructuras críticas.'
+        title: 'Reentrenamiento electivo (30 horas)',
+        description: 'Capacitación electiva de 30 horas que se enfoca en el rol de Coordinador de Medios Tecnológicos e Instalador de Medios Tecnológicos, cubriendo aspectos técnicos de configuración, mantenimiento y coordinación de personal OMT.'
       },
       ciclo4: {
-        title: 'Profundización en Medios Tecnológicos de Seguridad',
-        description: 'La Profundización en Medios Tecnológicos de Seguridad, con una duración de 30 horas, está diseñada para operadores experimentados que buscan perfeccionar sus habilidades en la gestión de sistemas tecnológicos avanzados. Este ciclo aborda la optimización de sistemas de seguridad, la resolución de problemas técnicos complejos y la implementación de mejoras continuas en el monitoreo y control de accesos. Los participantes desarrollarán una visión integral que les permitirá elevar la eficiencia operativa y garantizar la protección máxima mediante medios tecnológicos.'
+        title: 'Reentrenamiento electivo especialización en Medios Tecnológicos de Seguridad (80 horas)',
+        description: 'Ciclo de 80 horas que se enfoca en: Coordinador de Medios Tecnológicos, Instalador y Monitoreo y Supervisión de Centros de Establecimientos de Detección Preventiva y Carcelarios. Formación avanzada en sistemas complejos.'
+      },
+      ciclo5: {
+        title: 'Profundización en Medios Tecnológicos de Seguridad (30 horas)',
+        description: 'Módulo de 30 horas para operadores experimentados. Profundiza en la optimización de sistemas, la auditoría de seguridad electrónica y la integración avanzada de diferentes tecnologías (CCTV, Alarmas, GPS, etc.).'
       }
     } 
   },
   { 
     src: image5, 
-    title: 'Coordinador', 
-    description: 'Dirigido a quienes desean desempeñar funciones de coordinación y gestión dentro de una empresa de seguridad. Este curso incluye formación en administración de recursos humanos, análisis de riesgos, y planificación estratégica.', 
+    title: 'Seminarios', 
+    description: 'Dirigido a directivos, coordinadores, jefes de riesgo y asesores de seguridad. Se enfoca en la gestión administrativa, legal, financiera y operativa de los servicios de vigilancia privada.', 
     direction: 'direction1',
     ciclos: {
       ciclo1: {
-        title: 'Coordinadores y directivos seminarios',
-        description: 'Este programa está diseñado para profesionales que buscan liderar y gestionar equipos dentro del ámbito de la seguridad privada. A lo largo del seminario, se exploran las mejores prácticas en supervisión operativa, toma de decisiones estratégicas y manejo eficiente de recursos. Además, los participantes desarrollarán competencias clave en la gestión integral de riesgos, optimización de procesos y liderazgo efectivo, preparándolos para asumir roles de alta responsabilidad dentro de una organización de seguridad.'
+        title: 'SEMINARIOS ADMINISTRATIVOS (30 HORAS)', 
+        description: 'Seminario de 30 horas que aborda la Administración de Servicios, Director de Operaciones y la Gestión Legal y Financiera de la Seguridad Privada. Es fundamental para el liderazgo estratégico y el cumplimiento normativo.'
+      },
+      ciclo2: {
+        title: 'SEMINARIOS DE GESTIÓN Y RIESGO (30 HORAS)',
+        description: 'Seminario de 30 horas enfocado en el rol de Jefe de Riesgo, Auditoría y Control de Gestión. Incluye la coordinación de medios tecnológicos y el conocimiento de Centros de Establecimientos de Detección Preventiva y Carcelarios.'
       }
     }
   },
