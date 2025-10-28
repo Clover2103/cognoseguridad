@@ -64,7 +64,7 @@
   display: block;
   position: absolute;
   border: 10px;
-  box-shadow: 4px 5px 20px var(--aiex-yellow);
+  box-shadow: 4px 5px 20px var(--cogno-blue-dark);
   border-radius: 25px;
 }
 
