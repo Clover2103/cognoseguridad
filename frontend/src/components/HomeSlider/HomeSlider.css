@@ -6,224 +6,167 @@
   --cogno-dark: #000000;
 }
 
-.bodyHomeSlider {
-  display: flex;
-  position: relative;
+.homeSlider {
   width: 100%;
-  min-height: 650px;
+  height: 500px;
+  max-height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  margin-top: 8px ;
+}
+
+.cont-slider {
+  width: 90%;
+  height: 90%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   overflow: hidden;
 }
 
-.img-back-HomeSlider {
-  position: absolute;
+.slider-img {
+  transition: all 0.5s ease;
+  display: none;
+  border-radius: 25px;
+}
+
+.slider-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -3;
+  border-radius: 25px;
 }
 
-.img-back-HomeSlider img {
-  width: 100%;
+.slider-img.focus {
+  width: 70%;
   height: 100%;
-  object-fit: cover;
-}
-
-.img-back-HomeSlider img.animated-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: zoomIn 10s ease-in-out infinite;
-  transition: opacity 1s ease-in-out;
-}
-
-.containerHomeSlider {
-  height: 100%;
-  width: 100%;
-}
-
-.leftHomeSlider img {
-  width: 350px;
-}
-
-.rightHomeSlider,
-.leftHomeSlider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transform: scale(1.2);
   z-index: 100;
+  opacity: 1;
+  display: block;
+  position: absolute;
+  border: 10px;
+  box-shadow: 4px 5px 20px var(--cogno-blue-dark);
+  border-radius: 25px;
 }
 
-.descriptionHomeSlider {
-  width: 320px;
-  height: 320px;
-  text-align: center;
-  border-radius: 50%;
-  background-color: var(--cogno-white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  opacity: 0.8;
+.slider-img.left {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -50%;
+  transform: scale(0.8);
+  z-index: 60;
+  opacity: 1;
+  display: block;
+  border-radius: 25px;
 }
 
-.descriptionHomeSlider button{
-  width: 210px;
+.slider-img.right {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: -50%;
+  transform: scale(0.8);
+  z-index: 60;
+  opacity: 1;
+  display: block;
+  border-radius: 25px;
+}
+
+.slider-msg {
+  width: 450px;
+  max-width: 450px;
+  position: absolute;
+  bottom: 20px;
+  margin: auto;
+  color: var(--cogno-dark);
+  font-size: 24px;
+  background-color: #F2F4F490;
+  border-radius: 5px;
+  z-index: 120;
+}
+
+.slider-msg span {
   font-weight: bold;
-  background-color: var(--cogno-blue-lite);
+  background-color: var(--cogno-blue-dark);
+  font-size: 24px;
+  padding: 5px 8px;
+  margin: 0 5px;
+  border-radius: 8px;
   color: var(--cogno-white);
-  border-radius: 12px;
+}
+
+.slider-msg h2 {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 2px 8px;
+  margin: 1px 5px;
+}
+
+.nav-btn {
+  position: absolute;
+  font-size: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: var(--cogno-dark);
   border: none;
-  font-size: 12px;
-  box-shadow: 4px 5px 8px var(--cogno-blue-lite);
-  padding: 8px;
+  padding: 10px;
   cursor: pointer;
-  z-index: 1000 !important;
+  z-index: 150;
 }
 
-.circuleHomeSlider1 {
-  width: 350px;
-  height: 350px;
+.prev-btn {
+  left: 30px;
+}
+
+.next-btn {
+  right: 30px;
+}
+
+.slider-deg {
+  position: absolute;
+  background-color: #f2f4f49c;
+  z-index: 80;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--cogno-grey);
+  box-shadow: 2px 2px 10px var(--cogno-dark);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
   background-color: var(--cogno-blue-dark);
-  border-radius: 50%;
-  position: absolute;
-  top: -5%;
-  left: -5%;
-  z-index: -1;
-}
-
-.circuleHomeSlider2 {
-  width: 350px;
-  height: 350px;
-  background-color: var(--cogno-blue-dark);
-  border-radius: 50%;
-  position: absolute;
-  top: -20%;
-  left: 10%;
-  z-index: -1;
-}
-
-.circuleHomeSlider3 {
-  width: 350px;
-  height: 350px;
-  background-color: var(--cogno-blue-dark);
-  border-radius: 50%;
-  position: absolute;
-  top: 12%;
-  left: -15%;
-  z-index: -1;
-}
-
-.circuleHomeSlider4 {
-  width: 350px;
-  height: 350px;
-  background-color: var(--cogno-blue-lite);
-  border-radius: 50%;
-  position: absolute;
-  top: 10%;
-  left: -8%;
-  z-index: -2;
-}
-
-.circuleHomeSlider5 {
-  width: 350px;
-  height: 350px;
-  background-color: var(--cogno-blue-lite);
-  border-radius: 50%;
-  position: absolute;
-  top: -5%;
-  left: 6%;
-  z-index: -2;
-}
-
-.circuleHomeSlider7 {
-  width: 350px;
-  height: 350px;
-  background-color: var(--cogno-blue-dark);
-  border-radius: 50%;
-  position: absolute;
-  right: 15%;
-  bottom: -10%;
-  z-index: -1;
-}
-
-.circuleHomeSlider8 {
-  width: 350px;
-  height: 350px;
-  background-color: var(--cogno-blue-dark);
-  border-radius: 50%;
-  position: absolute;
-  right: 25%;
-  bottom: -30%;
-  z-index: -1;
-}
-
-.circuleHomeSlider9 {
-  width: 400px;
-  height: 400px;
-  background-color: var(--cogno-blue-dark);
-  border-radius: 50%;
-  position: absolute;
-  right: -8%;
-  bottom: -8%;
-  z-index: -1;
-}
-
-.circuleHomeSlider10 {
-  width: 400px;
-  height: 400px;
-  background-color: var(--cogno-blue-dark);
-  border-radius: 50%;
-  position: absolute;
-  right: -12%;
-  bottom: 15%;
-  z-index: -1;
-}
-
-.circuleHomeSlider11 {
-  width: 350px;
-  height: 350px;
-  background-color: var(--cogno-blue-lite);
-  border-radius: 50%;
-  position: absolute;
-  right: 8%;
-  bottom: 15%;
-  z-index: -2;
-}
-
-.circuleHomeSlider12 {
-  width: 350px;
-  height: 350px;
-  background-color: var(--cogno-blue-lite);
-  border-radius: 50%;
-  position: absolute;
-  right: 20%;
-  bottom: -5%;
-  z-index: -2;
-}
-
-.circuleHomeSlider13 {
-  width: 400px;
-  height: 400px;
-  background-color: var(--cogno-blue-dark);
-  border-radius: 50%;
-  position: absolute;
-  right: 0%;
-  bottom: -15%;
-  z-index: -1;
-}
-
-/* Definición de la animación para el efecto de acercamiento */
-@keyframes zoomIn {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05); /* Ajusta este valor según el nivel de acercamiento deseado */
-  }
-  100% {
-    transform: scale(1);
-  }
+  box-shadow: 2px 2px 10px var(--cogno-dark);
 }

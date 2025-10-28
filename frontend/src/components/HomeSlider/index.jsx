@@ -1,31 +1,71 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import imagen1 from "../../assets/home/slider/imagen1.jpg";
-import imagen2 from "../../assets/home/slider/imagen2.jpg";
-import imagen3 from "../../assets/home/slider/imagen3.jpg";
-import imagen4 from "../../assets/home/slider/imagen4.jpg";
-import imagen5 from "../../assets/home/slider/imagen5.jpg";
-import { useCarrucel } from "../../hooks/useCarrucel";
+import React, { useRef, useState } from 'react';
+import img1 from '../../assets/home/slider/imagen1.jpeg';
+import img2 from '../../assets/home/slider/imagen2.jpg';
+import img3 from '../../assets/home/slider/imagen3.jpg';
+import img4 from '../../assets/home/slider/imagen4.jpg';
+import img5 from '../../assets/home/slider/imagen5.jpg';
+import img6 from '../../assets/home/slider/imagen6.jpg';
+import img7 from '../../assets/home/slider/imagen7.jpg';
+import img8 from '../../assets/home/slider/imagen8.jpg';
+import img9 from '../../assets/home/slider/imagen9.jpg';
+import img10 from '../../assets/home/slider/imagen10.jpg';
+import { useSlider } from '../../hooks/useSlider';
 import './HomeSlider.css';
 
-const imagenes = [imagen1, imagen2, imagen3, imagen4, imagen5];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 
 const HomeSlider = () => {
-  const { 
+  
+  const {
     currentIndex,
-  } = useCarrucel(imagenes.length, true, 5000);
+    sliderRef,
+    scrollLeft,
+    scrollRight,
+    goToIndex,
+    handleMouseEnter,
+    handleMouseLeave,
+  } = useSlider(images.length, true, 5000);
 
   return (
-    <div className="bodyHomeSlider">
-      <div className="img-back-HomeSlider">
-        <img src={imagenes[currentIndex]} alt="Slider" className="slider-image animated-image" />
+    <div className="homeSlider"  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div className="cont-slider">
+        <button className="nav-btn prev-btn" onClick={scrollLeft}>&#10094;</button>
+        <div className="slider" ref={sliderRef}>
+          {images.map((img, index) => {
+            let className = 'slider-img';
+            if (index === currentIndex) {
+              className += ' focus';
+            } else if (index === (currentIndex - 1 + images.length) % images.length) {
+              className += ' left';
+            } else if (index === (currentIndex + 1) % images.length) {
+              className += ' right';
+            }
+            return (
+              <div className={className} key={index}>
+                <img src={img} alt={`img-slider-${index + 1}`} />
+              </div>
+            );
+          })}
+        </div>
+        <button className="nav-btn next-btn" onClick={scrollRight}>&#10095;</button>
+        <div className="slider-msg">
+          <h2>CAPACITATE EN</h2>
+          <span>VIGILANCIA Y</span>
+          <h2>SEGURIDAD PRIVADA</h2>
+        </div>
       </div>
-      <div className="containerHomeSlider row g-2 mb-4">
-        <div className="leftHomeSlider col-md">
-          {/* Aquí podrías agregar contenido adicional si es necesario */}
-        </div>
-        <div className="rightHomeSlider col-md">
-        </div>
+      <div className="slider-dots">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => goToIndex(index)}
+          ></span>
+        ))}
+      </div>
+
+      <div className="slider-deg">
+          
       </div>
     </div>
   );

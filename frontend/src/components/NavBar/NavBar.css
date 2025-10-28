@@ -8,7 +8,7 @@
 
 .navBar {
   display: flex;
-  position:absolute ;
+  /* position:absolute ; */
   justify-content: space-around;
   align-items: center;
   height: 120px;
