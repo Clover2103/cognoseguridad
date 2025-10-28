@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import img1 from '../../assets/home/slider/imagen1.jpeg';
+import img1 from '../../assets/home/slider/imagen1.jpg';
 import img2 from '../../assets/home/slider/imagen2.jpg';
 import img3 from '../../assets/home/slider/imagen3.jpg';
 import img4 from '../../assets/home/slider/imagen4.jpg';
@@ -8,11 +8,10 @@ import img6 from '../../assets/home/slider/imagen6.jpg';
 import img7 from '../../assets/home/slider/imagen7.jpg';
 import img8 from '../../assets/home/slider/imagen8.jpg';
 import img9 from '../../assets/home/slider/imagen9.jpg';
-import img10 from '../../assets/home/slider/imagen10.jpg';
 import { useSlider } from '../../hooks/useSlider';
 import './HomeSlider.css';
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 const HomeSlider = () => {
   
@@ -50,7 +49,7 @@ const HomeSlider = () => {
         <button className="nav-btn next-btn" onClick={scrollRight}>&#10095;</button>
         <div className="slider-msg">
           <h2>CAPACITATE AHORA</h2>
-          <span>EN VIGILANCIA Y</span>
+          <span className='slider-blue'>EN VIGILANCIA Y</span>
           <h2>SEGURIDAD PRIVADA</h2>
         </div>
       </div>
