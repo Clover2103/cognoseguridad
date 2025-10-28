@@ -49,8 +49,8 @@ const HomeSlider = () => {
         </div>
         <button className="nav-btn next-btn" onClick={scrollRight}>&#10095;</button>
         <div className="slider-msg">
-          <h2>CAPACITATE EN</h2>
-          <span>VIGILANCIA Y</span>
+          <h2>CAPACITATE AHORA</h2>
+          <span>EN VIGILANCIA Y</span>
           <h2>SEGURIDAD PRIVADA</h2>
         </div>
       </div>
