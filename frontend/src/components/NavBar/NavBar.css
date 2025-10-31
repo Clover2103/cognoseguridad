@@ -11,7 +11,7 @@
   /* position:absolute ; */
   justify-content: space-around;
   align-items: center;
-  height: 120px;
+  height: 140px;
   border-bottom: 1.5px solid var(--cogno-blue-dark);
   box-shadow: 0px 6px 6px var(--cogno-blue-dark);
   z-index: 1000;
@@ -31,9 +31,8 @@
 }
 
 .cogno-logo-navbar img{
-  height: 100px;
+  height: 110px;
 }
-
 
 .navBar__links {
   display: flex;
