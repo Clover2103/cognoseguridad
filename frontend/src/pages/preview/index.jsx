@@ -1,38 +1,24 @@
 import React from "react";
+import img from "../../assets/contact/back.jpeg"
+import logo from "../../assets/Logo COGNOSEGURIDAD.png";
 import './preview.css';
-import logo from '../../assets/Logo COGNOSEGURIDAD.png';
-import { useRedirectAfterDelay } from '../../hooks/useRedirectAfterDelay';
 
 const Preview = () => {
-
-  useRedirectAfterDelay('/home', 5000);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>BIENVENIDO A</h1>
-        <div className='cont-logo'>
-          <div className='circule-1 circule'></div>
-          <div className='circule-2 circule'></div>
-          <div className='circule-3 circule'></div>
-          <div className='circule-4 circule'></div>
-          <div className='circule-5 circule'></div>
-          <div className='circule-6 circule'></div>
-          <div className='circule-7 circule'></div>
-          <div className='circule-8 circule'></div>
-          <div className='circule-9 circule'></div>
-          <div className='circule-10 circule'></div>
-          <div className='circule-11 circule'></div>
-          <div className='circule-12 circule'></div>
-          <div className='circule-13 circule'></div>
-          <div className='circule-14 circule'></div>
-          <div className='circule-15 circule'></div>
-          <div className='logo'>
-            <img src={logo} className="App-logo-preview" alt="logo" />
-          </div>
+    <div className="preview-body" style={{backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+      <div className="preview-pelicula">
+        <div className="content-preselect">
+          <h3 className="title-preselect">Elija desde que sede de Cognoseguridad nos habla</h3>
+          <img src={logo} alt="" className="logo-preselect" />
+          <select name="" id="" className="select-preselect">
+            <option value="">Bogotá D.C.</option>
+            <option value="">Cucuta</option>
+            <option value="">Villavicencio</option>
+            <option value="">Bucaramanga</option>
+          </select>
+          <button className="button-select">Continuar</button>
         </div>
-        <p>Por favor, espere<span className="loading-dots"></span></p>
-      </header>
+      </div>
     </div>
   );
 };

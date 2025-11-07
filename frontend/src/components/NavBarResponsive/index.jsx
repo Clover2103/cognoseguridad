@@ -17,7 +17,7 @@ const NavBarResponsive = () => {
       <div className="navBarResponsive__header">
         <div className="navBarResponsive__logo">
           <div className="navBarResponsive__logo cogno-logo-navbar">
-            <Link to="/">
+            <Link to="/home">
               <img src={logo} alt="Cognoseguridad" />
             </Link>
           </div>
@@ -29,7 +29,7 @@ const NavBarResponsive = () => {
 
       {isMenuOpen && (
         <div className="navBarResponsive__links">
-          <Link to="/" onClick={toggleMenu}>INICIO</Link>
+          <Link to="/home" onClick={toggleMenu}>INICIO</Link>
           <Link to="/scopes" onClick={toggleMenu}>CURSOS</Link>
           <Link to="/consultation" onClick={toggleMenu}>CONSULTAS</Link>
           <Link to="/contact" onClick={toggleMenu}>CONTACTO</Link>
