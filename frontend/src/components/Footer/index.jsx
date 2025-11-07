@@ -1,26 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from 'react-router-dom';
 import { FaTiktok } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import { SedeContext } from "../../context/SedeContext";
+import { sedesData } from "../../data/sedesData";
 import isme from "../../assets/Logo ISME.png";
 import "./Footer.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Footer = () => {
+  const { sede } = useContext(SedeContext);
+  const info = sedesData[sede];
+
   return (
     <div className="footer row g-3">
 
       <div className="cont-area col-md-4">
-
-        <div className="cont-acred">
-          <p>Auditado y verificado por: </p>
-          <div className="cont-logo-footer">
-            <img src={isme} alt="ISME" />
-          </div>
-        </div>
 
         <div className="redes">
           <div>
@@ -34,10 +35,26 @@ const Footer = () => {
             </a>
           </div>
           <div>
-            <a href="https://api.whatsapp.com/send?phone=573105610135" target="_blank" className="cl-p">
-              <FaWhatsapp className="red-icon"/>
-            </a>
+            {info && (
+              <a href={info.whatsApp} target="_blank" className="cl-p">
+                <FaWhatsapp className="red-icon"/>
+              </a>
+            )
+            }
           </div>
+        </div>
+
+        <div className="cont-acred">
+          <p>Auditado y verificado por: </p>
+          <div className="cont-logo-footer">
+            <img src={isme} alt="ISME" />
+          </div>
+        </div>
+
+        <div className="orientation-contact">
+          <p><FaLocationDot className="icon-info-form"/> {info && (info.direccion)} </p>
+          <p><FaPhoneAlt className="icon-info-form"/> +57 {info && (info.celular)}</p>
+          <p><IoIosMail className="icon-info-form"/> cognoseguridad@cognoseguridad.com</p>
         </div>
 
       </div>

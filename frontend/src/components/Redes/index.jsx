@@ -1,11 +1,16 @@
-import React from "./Redes.css";
+import React, { useContext } from "react";
 import { FaTiktok } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
+import { SedeContext } from "../../context/SedeContext";
+import { sedesData } from "../../data/sedesData";
 import "./Redes.css";
 
 const RedesFlotantes = () => {
+    const { sede } = useContext(SedeContext);
+    const info = sedesData[sede];
+
     return (
     <div className="redes-flotantes">
         <div className="re-cont-flotantes">
@@ -22,9 +27,12 @@ const RedesFlotantes = () => {
             </div>
 
             <div className="row con-re-float" title="WhatsApp">
-                <a href="https://api.whatsapp.com/send?phone=573105610135" target="_blank" className="cl-p">
-                    <FaWhatsapp className="redes-icon"/>
-                </a>
+                {info && (
+                    <a href={info.whatsApp} target="_blank" className="cl-p">
+                        <FaWhatsapp className="redes-icon"/>
+                    </a>
+                )
+                }
             </div>
         </div>
     </div>

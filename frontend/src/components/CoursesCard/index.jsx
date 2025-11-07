@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GoArrowRight } from "react-icons/go";
 import { FaWhatsapp } from "react-icons/fa";
+import { SedeContext } from "../../context/SedeContext";
+import { sedesData } from "../../data/sedesData";
 import "./CoursesCard.css";
 
 const CoursesCard = ({ src, title, description, direction, ciclos, showModal }) => {
+  const { sede } = useContext(SedeContext);
+  const info = sedesData[sede];
 
   const handleShowModal = () => {
     // Generar el acordeón dinámicamente para los ciclos
@@ -47,9 +51,12 @@ const CoursesCard = ({ src, title, description, direction, ciclos, showModal }) 
             })}
           </div>
         </div>
-        <a href="https://wa.link/d7k5lc" target="_blank" rel="noreferrer">
-          <button className="btn btn-primary w-100">CONSULTARNOS MÁS INFORMACIÓN <FaWhatsapp /></button>
-        </a>
+        {info && (
+          <a href={info.whatsApp} target="_blank" rel="noreferrer">
+            <button className="btn btn-primary w-100">CONSULTARNOS MÁS INFORMACIÓN <FaWhatsapp /></button>
+          </a>
+        )  
+        }
       </div>
     );
     showModal(content);

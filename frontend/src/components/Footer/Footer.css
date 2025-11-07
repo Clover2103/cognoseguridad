@@ -104,3 +104,15 @@
 .cont-links a:hover {
   color: var(--cogno-yellow);
 }
+
+.orientation-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: left;
+}
+
+.icon-info-form {
+  color: var(--cogno-yellow);
+}
