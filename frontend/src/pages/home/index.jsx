@@ -3,6 +3,7 @@ import { HomeSlider } from "../../components/HomeSlider";
 import { HomeAboutUs } from "../../components/HomeAboutUs";
 import { HomeMAndV } from "../../components/HomeMAndV";
 import { HomeAwards } from "../../components/HomeAwards";
+import { HomeMaps } from "../../components/HomeMaps";
 import { HomeBigCalendar } from "../../components/HomeBigCalendar";
 import { HomeAllies } from "../../components/HomeAllies";
 
@@ -45,6 +46,7 @@ const Home = ({ showModal }) => {
       <HomeAboutUs showModal={showModal} />
       <HomeMAndV />
       <HomeAwards />
+      <HomeMaps />
       <HomeBigCalendar />
       <HomeAllies />
     </div>
