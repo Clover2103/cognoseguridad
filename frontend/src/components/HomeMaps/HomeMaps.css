@@ -2,59 +2,122 @@
   --cogno-blue-dark: #212c60;
   --cogno-blue-lite: #7981be;
   --cogno-yellow: #efb325;
-  --cogno-white: #FFFFFF;
+  --cogno-white: #ffffff;
   --cogno-dark: #000000;
 }
 
-:root{
-  --cogno-blue-dark: #212c60;
-  --cogno-white: #ffffff;
-}
-
-.homeMapsBody{
+.homeMapsBody {
   width: 100%;
   background-color: var(--cogno-blue-dark);
   padding: 40px 0;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
-/* Contenedor centrado y responsivo del mapa */
-.mapWrapper{
-  width: 500px;
-  max-width: 95%;
-  margin: 0 auto;
+.homeMapsContainer {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  max-width: 800px;
+}
+
+.sedesList {
+  flex: 1;
+  color: var(--cogno-white);
+  padding: 10px;
+}
+
+.sedesTitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--cogno-yellow);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.sedesList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sedeItem {
+  font-size: 1rem;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  background: transparent;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.sedeItem:hover,
+.sedeItem.active {
+  background-color: var(--cogno-yellow);
+  color: var(--cogno-dark);
+  transform: scale(1.05);
+}
+
+/* Contenedor del mapa */
+.mapWrapper {
+  flex: 2;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Asegura que el svg del mapa escale bien */
 .mapWrapper svg {
   display: block;
-  width: 100%;
-  height: 100%;
+  max-width: 480px;
+  height: auto;
 }
 
-/* Opcional: estilo de los markers cuando hover */
-.mapWrapper circle {
-  transition: transform 0.12s ease;
-  cursor: pointer;
-}
+/* Marcadores */
 .mapWrapper circle:hover {
   transform: scale(1.25);
 }
 
+/* Tooltip */
 .tooltip {
   position: fixed;
   background: rgba(0, 0, 0, 0.85);
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 6px;
   color: white;
   font-size: 14px;
   pointer-events: none;
   z-index: 10;
+  white-space: nowrap;
 }
 
-.mapWrapper circle:hover {
-  transform: scale(1.35);
+@media (max-width: 800px) {
+  .homeMapsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .sedesList {
+    text-align: center;
+  }
+
+  .mapWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mapWrapper svg {
+    width: 90vw; /* usa casi todo el ancho de pantalla */
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .mapWrapper {
+    transform: scale(1.2);
+  }
 }

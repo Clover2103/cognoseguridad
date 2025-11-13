@@ -1,4 +1,3 @@
-// HomeMaps.jsx
 import React, { useState } from "react";
 import {
   ComposableMap,
@@ -39,11 +38,21 @@ const sedes = [
 ];
 
 const HomeMaps = () => {
-  const [hovered, setHovered] = useState(null);
+  const [hovered, setHovered] = useState(null); // Tooltip
+  const [active, setActive] = useState(null); // Sede resaltada
+
+  const handleMouseMove = (e) => {
+    if (hovered) {
+      setHovered((prev) => ({
+        ...prev,
+        x: e.clientX + 15,
+        y: e.clientY + 15
+      }));
+    }
+  };
 
   return (
-    <div className="homeMapsBody">
-
+    <div className="homeMapsBody" onMouseMove={handleMouseMove}>
       {/* Tooltip */}
       {hovered && (
         <div className="tooltip" style={{ top: hovered.y, left: hovered.x }}>
@@ -51,47 +60,84 @@ const HomeMaps = () => {
         </div>
       )}
 
-      <div className="mapWrapper">
-        <ComposableMap
-          projection="geoMercator"
-          projectionConfig={{
-            scale: 2000, // 🔥 Aumenta zoom
-            center: [-75, 4.3] // 🔥 Centra Colombia continental
-          }}
-        >
-          <Geographies geography={colombiaTopo}>
-            {({ geographies }) =>
-              geographies.map((geo) => (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
+      <div className="homeMapsContainer">
+        {/* Lista de sedes */}
+        <div className="sedesList">
+          <h3 className="sedesTitle">Nuestras Sedes</h3>
+          <ul>
+            {sedes.map((sede) => (
+              <li
+                key={sede.name}
+                className={`sedeItem ${
+                  active === sede.name ? "active" : ""
+                }`}
+                onMouseEnter={() => setActive(sede.name)}
+                onMouseLeave={() => setActive(null)}
+                onClick={() => window.open(sede.url, "_blank")}
+              >
+                {sede.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Mapa */}
+        <div className="mapWrapper">
+          <ComposableMap
+            projection="geoMercator"
+            projectionConfig={{
+              scale: window.innerWidth < 768 ? 1800 : 2000,
+              center: [-74.3, 4.3]
+            }}
+            style={{ width: "100%", height: "auto" }}
+          >
+            <Geographies geography={colombiaTopo}>
+              {({ geographies }) =>
+                geographies.map((geo) => (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    style={{
+                      default: {
+                        fill: "#4C5683",
+                        stroke: "#C9C9C9",
+                        strokeWidth: 0.6
+                      },
+                      hover: { fill: "#5D6799" }
+                    }}
+                  />
+                ))
+              }
+            </Geographies>
+
+            {sedes.map(({ name, coords, url }) => (
+              <Marker
+                key={name}
+                coordinates={coords}
+                onMouseEnter={(e) => {
+                  setHovered({ name, x: e.clientX + 15, y: e.clientY + 15 });
+                  setActive(name);
+                }}
+                onMouseLeave={() => {
+                  setHovered(null);
+                  setActive(null);
+                }}
+                onClick={() => window.open(url, "_blank")}
+              >
+                <circle
+                  r={active === name ? 8 : 6}
+                  fill="#efb325"
+                  stroke="#fff"
+                  strokeWidth={2}
                   style={{
-                    default: {
-                      fill: "#4C5683",
-                      stroke: "#C9C9C9",
-                      strokeWidth: 0.6
-                    },
-                    hover: { fill: "#5D6799" }
+                    cursor: "pointer",
+                    transition: "transform 0.15s ease"
                   }}
                 />
-              ))
-            }
-          </Geographies>
-
-          {sedes.map(({ name, coords, url }) => (
-            <Marker
-              key={name}
-              coordinates={coords}
-              onMouseEnter={(e) =>
-                setHovered({ name, x: e.clientX + 15, y: e.clientY + 15 })
-              }
-              onMouseLeave={() => setHovered(null)}
-              onClick={() => window.open(url, "_blank")}
-            >
-              <circle r={7} fill="#efb325" stroke="#fff" strokeWidth={2} style={{ cursor: "pointer" }} />
-            </Marker>
-          ))}
-        </ComposableMap>
+              </Marker>
+            ))}
+          </ComposableMap>
+        </div>
       </div>
     </div>
   );
