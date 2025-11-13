@@ -19,7 +19,7 @@ const Footer = () => {
   const info = sedesData[sede];
 
   return (
-    <div className="footer row g-3">
+    <div className="footer row g-3 p-5">
 
       <div className="cont-area col-md-4">
 

@@ -111,6 +111,7 @@
   justify-content: start;
   align-items: start;
   text-align: left;
+  max-width: 340px;
 }
 
 .icon-info-form {
