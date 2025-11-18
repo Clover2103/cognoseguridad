@@ -13,27 +13,32 @@ const sedes = [
   {
     name: "Bogotá D.C.",
     coords: [-74.0658, 4.6666],
-    url: "https://www.google.com/maps/search/?api=1&query=4.6666,-74.0658"
+    url: "https://www.google.com/maps/place/Academia+Cognoseguridad+Ltda./data=!4m2!3m1!1s0x0:0xb91454118c0ce402?sa=X&ved=1t:2428&ictx=111"
   },
   {
     name: "Cúcuta",
     coords: [-72.4987, 7.8939],
-    url: "https://www.google.com/maps/search/?api=1&query=7.8939,-72.4987"
+    url: "https://www.google.com/maps/place/Academia+Cognoseguridad+Ltda.+Agencia+C%C3%BAcuta/@7.8936464,-72.4987335,17z/data=!3m1!4b1!4m6!3m5!1s0x8e6645737d2309c7:0x8adcf0120eec0965!8m2!3d7.8936464!4d-72.4987335!16s%2Fg%2F11c2k39gfn?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
   },
   {
     name: "Villavicencio",
     coords: [-73.6228, 4.1350],
-    url: "https://www.google.com/maps/search/?api=1&query=4.1350,-73.6228"
+    url: "https://www.google.com/maps/place/Academia+Cognoseguridad+Ltda.+Agencia+Villavicencio/data=!4m2!3m1!1s0x0:0x7bca00f39807b209?sa=X&ved=1t:2428&ictx=111"
   },
   {
     name: "Bucaramanga",
     coords: [-73.1241, 7.1179],
-    url: "https://www.google.com/maps/search/?api=1&query=7.1179,-73.1241"
+    url: "https://www.google.com/maps/place/Academia+de+Vigilancia+Cognoseguridad+Bucaramanga/@7.117897,-73.124168,17z/data=!3m1!4b1!4m6!3m5!1s0x8e6815d5bbfab617:0x13c36a19a3fc669d!8m2!3d7.117897!4d-73.124168!16s%2Fg%2F11fs331klx?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
   },
   {
     name: "Santa Rosa de Cabal",
     coords: [-75.6228, 4.8745],
     url: "https://www.google.com/maps/search/?api=1&query=4.8745,-75.6228"
+  },
+  {
+    name: "Tocancipa",
+    coords: [-73.91522170428286, 4.964322262127691],
+    url: "https://www.google.com/maps/place/4%C2%B057'51.6%22N+73%C2%B054'54.8%22W/@4.9643386,-73.9177971,17z/data=!3m1!4b1!4m4!3m3!8m2!3d4.9643333!4d-73.9152222?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
   }
 ];
 
@@ -125,7 +130,7 @@ const HomeMaps = () => {
                 onClick={() => window.open(url, "_blank")}
               >
                 <circle
-                  r={active === name ? 8 : 6}
+                  r={active === name ? 10 : 8}
                   fill="#efb325"
                   stroke="#fff"
                   strokeWidth={2}

@@ -33,6 +33,8 @@ const Preview = () => {
             <option value="Cucuta">Cúcuta</option>
             <option value="Villavicencio">Villavicencio</option>
             <option value="Bucaramanga">Bucaramanga</option>
+            <option value="Santa Rosa de Cabal">Santa Rosa de Cabal</option>
+            <option value="Tocancipa">Tocancipa</option>
           </select>
 
           <button className="button-select" onClick={handleContinue}>Continuar</button>
