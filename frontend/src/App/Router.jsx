@@ -11,6 +11,7 @@ import { Footer } from '../components/Footer';
 import { Modal } from '../components/Modal';
 import { RedesFlotantes } from '../components/Redes';
 import { ScrollToTop } from '../components/ScrollToTop';
+import { ChatWidget } from '../components/ChatWidget';
 
 const RouterPages = () => {
 
@@ -56,6 +57,7 @@ const RouterPages = () => {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       {location.pathname !== "/" && <Footer />}
+      {location.pathname !== "/" && <ChatWidget />}
       <Modal isVisible={isModalVisible} hideModal={hideModal} content={modalContent} />
     </div>
     
