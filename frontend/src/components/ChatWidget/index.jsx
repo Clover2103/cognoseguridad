@@ -1,132 +1,17 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import "./ChatWidget.css";
 import { IoChatbubblesSharp, IoClose } from "react-icons/io5";
+import { SedeContext } from "../../context/SedeContext";
+import { sedesData } from "../../data/sedesData";
 
 /* =====================================================
    ÁRBOL DEL CHATBOT CON SUBMENÚ FINAL
 ===================================================== */
 
-const chatbotTree = {
-  "1": {
-    titulo: "Información general sobre formación",
-    opciones: {
-      "1": "¿Puedo capacitarme sin ser bachiller?",
-      "2": "¿Cuánto dura un curso presencial?",
-      "3": "¿Qué necesito para iniciar?",
-      "4": "¿Desde qué edad puedo estudiar?",
-      "5": "¿Los cursos tienen validez nacional?"
-    },
-    respuestas: {
-      "1": "Sí, puedes capacitarte sin ser bachiller. Solo necesitas tu cédula.",
-      "2": "Una semana completa.",
-      "3": "Solo tu cédula y la disposición para formarte.",
-      "4": "Debes ser mayor de 18 años para iniciar formación en vigilancia.",
-      "5": "Sí, los cursos tienen validez nacional y cumplen normativas."
-    }
-  },
 
-  "2": {
-    titulo: "Cursos y programas",
-    opciones: {
-      "1": "Ver lista completa de cursos",
-      "2": "¿Qué curso debo tomar primero?",
-      "3": "Diferencia entre Vigilancia fija y Móvil",
-      "4": "Cursos para ascensos"
-    },
-    respuestas: {
-      "1": "Cursos: Vigilancia, Escolta, Medios Tecnológicos, Supervisor, Reentrenamientos.",
-      "2": "El curso base para iniciar es Vigilancia.",
-      "3": "Fija = puesto determinado. Móvil = patrullaje en zonas.",
-      "4": "Puedes tomar Supervisor, Coordinador o especializaciones."
-    }
-  },
-
-  "3": {
-    titulo: "Certificados y trámites",
-    opciones: {
-      "1": "Tiempo de entrega de reentrenamiento",
-      "2": "Solicitar copia del certificado",
-      "3": "¿Cómo descargo mi certificado?",
-      "4": "¿Qué hacer si mi certificado tiene un error?"
-    },
-    respuestas: {
-      "1": "Entrega inmediata después del pago.",
-      "2": "Tiene un valor de $20.000 y la entrega es inmediata.",
-      "3": "Tu certificado virtual queda en tu perfil.",
-      "4": "Contáctanos por WhatsApp para corregirlo."
-    }
-  },
-
-  "4": {
-    titulo: "Requisitos de ingreso",
-    opciones: {
-      "1": "Documentos necesarios",
-      "2": "Requisitos para virtualidad",
-      "3": "Exámenes médicos",
-      "4": "Antecedentes"
-    },
-    respuestas: {
-      "1": "Solo necesitas tu cédula.",
-      "2": "Internet, computador/celular y correo electrónico.",
-      "3": "No son necesarios para cursos básicos.",
-      "4": "Para algunos empleos sí, pero no para estudiar."
-    }
-  },
-
-  "5": {
-    titulo: "Costos y pagos",
-    opciones: {
-      "1": "Valor de los cursos",
-      "2": "Medios de pago disponibles",
-      "3": "¿Puedo pagar por cuotas?",
-      "4": "¿Aceptan pagos desde otro país?"
-    },
-    respuestas: {
-      "1": "Los precios varían según el programa.",
-      "2": "Efectivo, transferencia y consignación.",
-      "3": "Dependiendo del curso se puede pactar.",
-      "4": "Sí, aceptamos pagos internacionales."
-    }
-  },
-
-  "6": {
-    titulo: "Modalidades (Presencial / Virtual)",
-    opciones: {
-      "1": "¿Se puede realizar el curso virtual?",
-      "2": "¿Cómo funciona la plataforma virtual?",
-      "3": "¿Puedo combinar presencial + virtual?"
-    },
-    respuestas: {
-      "1": "Sí, contamos con un portafolio virtual.",
-      "2": "Estudias contenidos y presentas evaluaciones online.",
-      "3": "Algunos cursos permiten combinar modalidades."
-    }
-  },
-
-  "7": {
-    titulo: "Contacto y WhatsApp",
-    opciones: {
-      "1": "Enviar información a un asesor",
-      "2": "Número de WhatsApp",
-      "3": "Ubicación física"
-    },
-    respuestas: {
-      "1": "Te envío con nuestro asesor vía WhatsApp...",
-      "2": "+57 300 XXX XXXX",
-      "3": "Cra XX # XX – XX"
-    }
-  }
-};
-
-// Submenú común final
-const finalMenu = {
-  "1": "Volver al menú anterior",
-  "2": "Volver al menú principal",
-  "3": "Salir"
-};
 
 /* =====================================================
-   COMPONENTE PRINCIPAL
+COMPONENTE PRINCIPAL
 ===================================================== */
 
 const ChatWidget = () => {
@@ -147,10 +32,131 @@ const ChatWidget = () => {
         "9. Salir"
     }
   ]);
+  const { sede } = useContext(SedeContext);
+  const info = sedesData[sede];
 
   const [currentMenu, setCurrentMenu] = useState(null);
   const [awaitingFinal, setAwaitingFinal] = useState(false);
   const [input, setInput] = useState("");
+
+  const chatbotTree = {
+    "1": {
+      titulo: "Información general sobre formación",
+      opciones: {
+        "1": "¿Puedo capacitarme sin ser bachiller?",
+        "2": "¿Cuánto dura un curso presencial?",
+        "3": "¿Qué necesito para iniciar?",
+        "4": "¿Desde qué edad puedo estudiar?",
+        "5": "¿Los cursos tienen validez nacional?"
+      },
+      respuestas: {
+        "1": "Sí, puedes capacitarte sin ser bachiller. Solo necesitas tu cédula.",
+        "2": "Una semana completa.",
+        "3": "Solo tu cédula y la disposición para formarte.",
+        "4": "Debes ser mayor de 18 años para iniciar formación en vigilancia.",
+        "5": "Sí, los cursos tienen validez nacional y cumplen normativas."
+      }
+    },
+
+    "2": {
+      titulo: "Cursos y programas",
+      opciones: {
+        "1": "Ver lista completa de cursos",
+        "2": "¿Qué curso debo tomar primero?",
+        "3": "Diferencia entre Vigilancia fija y Móvil",
+        "4": "Cursos para ascensos"
+      },
+      respuestas: {
+        "1": "Cursos: Vigilancia, Escolta, Medios Tecnológicos, Supervisor, Reentrenamientos.",
+        "2": "El curso base para iniciar es Vigilancia.",
+        "3": "Fija = puesto determinado. Móvil = patrullaje en zonas.",
+        "4": "Puedes tomar Supervisor, Coordinador o especializaciones."
+      }
+    },
+
+    "3": {
+      titulo: "Certificados y trámites",
+      opciones: {
+        "1": "Tiempo de entrega de reentrenamiento",
+        "2": "Solicitar copia del certificado",
+        "3": "¿Cómo descargo mi certificado?",
+        "4": "¿Qué hacer si mi certificado tiene un error?"
+      },
+      respuestas: {
+        "1": "Entrega inmediata después del pago.",
+        "2": "Tiene un valor de $20.000 y la entrega es inmediata.",
+        "3": "Tu certificado virtual se puede consultar desde pagina.",
+        "4": "Contáctanos por WhatsApp para corregirlo."
+      }
+    },
+
+    "4": {
+      titulo: "Requisitos de ingreso",
+      opciones: {
+        "1": "Documentos necesarios",
+        "2": "Requisitos para virtualidad",
+        "3": "Exámenes médicos",
+        "4": "Antecedentes"
+      },
+      respuestas: {
+        "1": "Solo necesitas tu cédula.",
+        "2": "Internet, computador/celular y correo electrónico.",
+        "3": "No son necesarios para cursos básicos.",
+        "4": "Para algunos empleos sí, pero no para estudiar."
+      }
+    },
+
+    "5": {
+      titulo: "Costos y pagos",
+      opciones: {
+        "1": "Valor de los cursos",
+        "2": "Medios de pago disponibles",
+        "3": "¿Puedo pagar por cuotas?",
+        "4": "¿Aceptan pagos desde otro país?"
+      },
+      respuestas: {
+        "1": "Los precios varían según el programa.",
+        "2": "Efectivo, transferencia y consignación.",
+        "3": "Dependiendo del curso se puede pactar.",
+        "4": "Sí, aceptamos pagos internacionales."
+      }
+    },
+
+    "6": {
+      titulo: "Modalidades (Presencial / Virtual)",
+      opciones: {
+        "1": "¿Se puede realizar el curso virtual?",
+        "2": "¿Cómo funciona la plataforma virtual?",
+        "3": "¿Puedo combinar presencial + virtual?"
+      },
+      respuestas: {
+        "1": "Sí, contamos con un portafolio virtual.",
+        "2": "Estudias contenidos y presentas evaluaciones online.",
+        "3": "Algunos cursos permiten combinar modalidades."
+      }
+    },
+
+    "7": {
+      titulo: "Contacto y WhatsApp",
+      opciones: {
+        "1": "Enviar información a un asesor",
+        "2": "Número de WhatsApp",
+        "3": "Ubicación física"
+      },
+      respuestas: {
+        "1": "Te envío con nuestro asesor vía WhatsApp...",
+        "2": `+57 ${info.celular}`,
+        "3": `${info.direccion}`
+      }
+    }
+  };
+
+  // Submenú común final
+  const finalMenu = {
+    "1": "Volver al menú anterior",
+    "2": "Volver al menú principal",
+    "3": "Salir"
+  };
 
   /* =====================================================
      REFERENCIA PARA SCROLL AUTOMÁTICO
@@ -279,6 +285,14 @@ const ChatWidget = () => {
        RESPUESTAS DEL SUBMENÚ
     ====================================================== */
     const submenu = chatbotTree[currentMenu];
+
+    // 🚀 Redirección automática a WhatsApp para menú 7 opción 1
+    if (currentMenu === "7" && userMsg === "1") {
+      window.open(
+        `${info.whatsApp}&text=Hola, vengo de la página web desde la sede de ${sede} y quiero recibir información.`,
+        "_blank"
+      );
+    }
 
     if (submenu.respuestas[userMsg]) {
       const respuesta = submenu.respuestas[userMsg];

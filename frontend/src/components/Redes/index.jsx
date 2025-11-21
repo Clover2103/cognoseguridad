@@ -28,7 +28,7 @@ const RedesFlotantes = () => {
 
             <div className="row con-re-float" title="WhatsApp">
                 {info && (
-                    <a href={info.whatsApp} target="_blank" className="cl-p">
+                    <a href={`${info.whatsApp}&text=Hola, vengo de la página web desde la sede de ${sede} y quiero recibir información.`} target="_blank" className="cl-p">
                         <FaWhatsapp className="redes-icon"/>
                     </a>
                 )
